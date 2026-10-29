@@ -1,0 +1,8 @@
+{
+  "name": "attention-lab",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {"check": "node check.mjs && node check-math.mjs"},
+  "dependencies": {"katex": "0.19.1"}
+}
