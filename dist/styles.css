@@ -19,3 +19,10 @@
 
 /* Allow equations, tables and code to scroll within a narrow reading column. */
 .article,.panel,.lesson-section-content,.notes-layout>*{min-width:0}
+
+/* A direct, accessible link to support the public GitHub repository. */
+.github-star{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:36px;padding:7px 12px;border:1px solid #ded3ef;border-radius:8px;background:#fff;color:#7256ae;font-size:12px;font-weight:600;white-space:nowrap;transition:background .15s,border-color .15s}
+.github-star svg{color:#ad8437;fill:#fff2c7}.github-star:hover{background:#faf6ff;border-color:#bda6dc}.github-external{font-size:12px;color:#9a86b3}
+.footer-links{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-left:auto}footer .footer-links a{margin-left:0}.footer-star{color:#8366ae}
+@media(max-width:760px){.github-star{min-height:34px;padding:6px 9px;gap:5px}.github-prefix,.github-external{display:none}.top-actions{gap:12px}.top-actions .storage-status{width:7px;max-width:7px;overflow:hidden;white-space:nowrap;gap:0}.storage-status .dot{flex-shrink:0}.footer-links{width:100%;margin:8px 0 0;justify-content:space-between;gap:12px}}
+@media(max-width:380px){#topbar{padding:0 14px}.top-actions{gap:8px}}
