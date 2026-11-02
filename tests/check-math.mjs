@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import katex from 'katex';
-import {lessons,assignments} from './dist/content.js';
-import {formatMathSource,mathText,math} from './dist/math.js';
+import {lessons,assignments} from '../dist/content.js';
+import {formatMathSource,mathText,math} from '../dist/math.js';
 let count=0;
 function checkTex(tex,label){try{katex.renderToString(tex,{throwOnError:true,strict:'error',trust:false});count++;}catch(e){throw new Error(`${label}: ${e.message}\n${tex}`);}}
 function snippets(s,label){for(const m of String(s).matchAll(/\\\(([\s\S]*?)\\\)|\\\[([\s\S]*?)\\\]/g))checkTex(m[1]??m[2],label);}
