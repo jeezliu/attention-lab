@@ -60,14 +60,14 @@ test('all ten lessons render math and all thirty answers update persistent progr
 
 test('wrong answers enter review and a corrected attempt removes them', async ({page}) => {
   await page.goto('./#practice/0');
-  await page.locator('[name="q-0-0"][value="1"]').check();
+  await page.locator('[name="q-0-0"][value="0"]').check();
   await page.locator('[name="q-0-1"]').fill('0.5');
   await page.locator('[name="q-0-2"][value="0"]').check();
   await page.locator('[data-action="submit-quiz"]').click();
   await expect(page.locator('#quiz-summary')).toContainText('2 / 3');
   await page.goto('./#practice/wrong');
   await expect(page.locator('.question')).toHaveCount(1);
-  await page.locator('[name="q-0-0"][value="0"]').check();
+  await page.locator('[name="q-0-0"][value="1"]').check();
   await page.locator('[data-action="submit-quiz"]').click();
   await page.reload();
   await expect(page.locator('#quiz')).toContainText('这里暂时没有错题');
