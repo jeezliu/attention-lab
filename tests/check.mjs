@@ -1,8 +1,8 @@
 import fs from 'node:fs';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
-import {lessons,stages,assignments,pythonStarter} from './dist/content.js';
-import {math,mathBlock,mathText} from './dist/math.js';
+import {lessons,stages,assignments,pythonStarter} from '../dist/content.js';
+import {math,mathBlock,mathText} from '../dist/math.js';
 const stub={addEventListener(){},textContent:'',innerHTML:'',classList:{toggle(){}}};
 const memory=new Map();
 const context=vm.createContext({lessons,stages,assignments,pythonStarter,math,mathBlock,mathText,typeset:()=>{},console,Date,Math,Number,String,Object,Array,Set,JSON,Error,Infinity,document:{querySelector(){return stub},addEventListener(){}},localStorage:{getItem:k=>memory.get(k)||null,setItem:(k,v)=>memory.set(k,v),removeItem:k=>memory.delete(k)},window:{addEventListener(){}},location:{hash:''}});
@@ -39,7 +39,6 @@ const sample=run('({...blank(),notes:[{id:"ntest-1",title:"<script>",body:"中�
 context.sample=sample;
 assert.equal(run('validateData(sample).notes[0].body'),'中文笔记');
 assert.equal(run('esc("<script>")'),'&lt;script&gt;');
-fs.writeFileSync('/tmp/attention-lab-reference.py',run('pythonStarter'));
 console.log('PASS: curriculum integrity, 30 answer keys, attention numerics, causal masking, stable softmax, temperature, progress, storage round-trip, import validation and escaping.');
 
 for (let i=0;i<10;i++) assert.ok(run(`lesson(${i})`).includes('katex'));

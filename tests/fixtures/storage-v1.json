@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "data": {
+    "read": [0, 4],
+    "attempts": [{"answers":{"0-0":"1","0-1":"0.5","0-2":"0"},"date":"2026-10-28T08:00:00.000Z"}],
+    "notes": [{"id":"nlegacy-1","title":"旧版笔记 <保留>","body":"理解注意力：\\(QK^{\\mathsf T}\\)\n第二行中文","lesson":4,"updated":"2026-10-28T08:00:00.000Z"}],
+    "work": {"2":{"body":"旧版 Python 作业草稿，包含推导、代码和运行结果。","checks":[true,false,true,false],"submitted":null,"updated":"2026-10-28T08:00:00.000Z"}},
+    "days": ["2026-10-28"],
+    "lastLesson": 4,
+    "labVisits": ["attention","position"]
+  }
+}

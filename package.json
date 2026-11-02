@@ -3,6 +3,21 @@
   "version": "2.0.0",
   "private": true,
   "type": "module",
-  "scripts": {"check": "node check.mjs && node check-math.mjs"},
-  "dependencies": {"katex": "0.19.1"}
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "npm run build && node scripts/serve.mjs",
+    "preview": "node scripts/serve.mjs",
+    "check": "npm run build && node tests/check.mjs && node tests/check-math.mjs && node tests/check-build.mjs",
+    "test:e2e": "playwright test",
+    "test": "npm run check && npm run test:e2e"
+  },
+  "dependencies": {
+    "katex": "0.19.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1"
+  }
 }

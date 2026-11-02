@@ -1,3 +1,8 @@
 node_modules/
 .sites-runtime/
 .sites-checkout/
+dist/
+.build-*/
+playwright-report/
+test-results/
+.openai/
